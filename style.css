@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "SacredMono";
+  src: url("assets/fonts/SacredMono.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #130f40, #6c5ce7);
+  font-family: "SacredMono", monospace;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 3s ease-in;
+}
+
+.waifu {
+  max-width: 280px;
+  filter: drop-shadow(0 0 10px #a29bfe);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
