@@ -1,38 +1,95 @@
-@font-face {
-  font-family: "SacredMono";
-  src: url("assets/fonts/SacredMono.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
+/* Fondo mágico */
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #130f40, #6c5ce7);
-  font-family: "SacredMono", monospace;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  background: linear-gradient(135deg, #1e1e2f, #3b2f59);
+  font-family: 'Cinzel Decorative', cursive;
+  color: #f1f1f1;
+  overflow-x: hidden;
 }
 
+/* Contenedor central */
 .container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
   text-align: center;
-  animation: fadeIn 3s ease-in;
+  position: relative;
+  z-index: 1;
 }
 
+/* Título encantado */
+.container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px #a29bfe;
+}
+
+/* Texto descriptivo */
+.container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Imagen mística de la waifu */
 .waifu {
   max-width: 280px;
-  filter: drop-shadow(0 0 10px #a29bfe);
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
+  filter: drop-shadow(0 0 12px #dcdcff);
   animation: float 4s ease-in-out infinite;
+  border-radius: 8px;
 }
 
+/* Animación de flotación */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Partículas místicas (simuladas con pseudo-elemento) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%),
+              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.03), transparent 60%);
+  animation: shimmer 10s linear infinite;
+  z-index: 0;
+}
+
+/* Brillo místico suave */
+@keyframes shimmer {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
+
+/* Adaptable para móviles */
+@media screen and (max-width: 600px) {
+  .container h1 {
+    font-size: 2.2rem;
+  }
+
+  .waifu {
+    max-width: 180px;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
 }
